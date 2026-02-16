@@ -16,372 +16,107 @@
       --accent: #3b82f6;
     }
 
-    * {
-      box-sizing: border-box;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    }
+    * { box-sizing: border-box; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; }
+    body { margin: 0; background: linear-gradient(180deg, #0b1220, #070b14); color: var(--txt); min-height: 100vh; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .top { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+    h1 { margin: 0; font-size: 24px; color: #fff; }
+    .muted { color: var(--muted); font-size: 13px; }
 
-    body {
-      margin: 0;
-      background: linear-gradient(180deg, #0b1220, #070b14);
-      color: var(--txt);
-      min-height: 100vh;
-      line-height: 1.5;
-    }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .card { background: rgba(17, 26, 46, 0.92); border: 1px solid var(--border); border-radius: 14px; padding: 20px; }
 
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+    h2 { margin: 0 0 16px; font-size: 16px; text-transform: uppercase; color: var(--muted); border-left: 3px solid var(--accent); padding-left: 10px; }
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: flex-end;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 16px;
-    }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 20px; }
+    .grid .full { grid-column: 1/-1; }
 
-    h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: .2px;
-      color: #fff;
-    }
+    .k { color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 600; }
+    .v { font-size: 14px; font-weight: 500; }
 
-    .muted {
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .totals { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .big { border: 1px solid var(--border); background: rgba(255,255,255,.02); border-radius: 12px; padding: 16px; text-align: center; }
+    .big .label { color: var(--muted); font-size: 12px; }
+    .big .value { font-size: 26px; font-weight: 800; color: #fff; }
 
-    /* ✅ Barra de acciones */
-    .actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: flex-end;
-      margin-top: 10px;
-    }
+    table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+    th, td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    th { text-align: left; color: var(--muted); background: rgba(255,255,255,.05); }
+    td.num, th.num { text-align: right; }
+    tfoot td { background: rgba(255,255,255,.05); font-weight: bold; }
 
-    .btn {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--txt);
-      padding: 10px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 13px;
-      transition: transform .05s ease, background .15s ease;
-    }
-
-    .btn:hover { background: rgba(255, 255, 255, 0.07); }
-    .btn:active { transform: translateY(1px); }
-
-    .btn.primary {
-      border-color: rgba(59, 130, 246, .45);
-      background: rgba(59, 130, 246, .12);
-    }
-
-    .btn.primary:hover { background: rgba(59, 130, 246, .18); }
-
-    .grid2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .card {
-      background: rgba(17, 26, 46, 0.92);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      height: 100%;
-    }
-
-    h2 {
-      margin: 0 0 16px;
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      border-left: 3px solid var(--accent);
-      padding-left: 10px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px 20px;
-    }
-
-    .grid .full {
-      grid-column: 1/-1;
-    }
-
-    .info-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .k {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .v {
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .totals {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .big {
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
-    }
-
-    .big .label {
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
-
-    .big .value {
-      font-size: 24px;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    .mt {
-      margin-top: 16px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    th,
-    td {
-      padding: 12px;
-      border-bottom: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    th {
-      text-align: left;
-      color: var(--muted);
-      background: rgba(255, 255, 255, .05);
-      font-weight: 600;
-    }
-
-    td.num,
-    th.num {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    tfoot td {
-      background: rgba(255, 255, 255, .05);
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .warn-box {
-      border: 1px solid rgba(255, 204, 102, .2);
-      background: rgba(255, 204, 102, .05);
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 13px;
-      margin-top: 20px;
-    }
-
-    /* ✅ ESTILO DE IMPRESIÓN (para PDF limpio) */
-    @media print {
-      body { background: #fff !important; color: #000 !important; }
-      .actions { display: none !important; } /* oculta botones */
-      .card { break-inside: avoid; }
-      .wrap { padding: 0; max-width: none; }
-      .top { border-bottom: 1px solid #ddd; }
-      :root { --border: rgba(0,0,0,.12); }
-    }
-
-    @media (max-width: 900px) {
-      .grid2,
-      .grid,
-      .totals {
-        grid-template-columns: 1fr;
-      }
-
-      .top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
-    }
+    .warn-box { border: 1px solid rgba(255,204,102,.2); background: rgba(255,204,102,.05); padding: 16px; border-radius: 12px; font-size: 13px; margin-top: 20px; }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div>
-        <h1>Resumen de presupuesto</h1>
-        <div class="muted">Generado: 16/2/2026, 11:55:29</div>
+<div class="wrap">
 
-        <!-- ✅ Botones -->
-        <div class="actions">
-          <button class="btn primary" onclick="window.print()">Descargar PDF</button>
-          <button class="btn" onclick="navigator.clipboard.writeText(window.location.href).catch(()=>{}); alert('Enlace copiado');">
-            Copiar enlace
-          </button>
-        </div>
-      </div>
+  <div class="top">
+    <div>
+      <h1>Resumen de presupuesto</h1>
       <div class="muted">Provincia fiscal: <strong>Bizkaia</strong></div>
     </div>
+  </div>
 
-    <div class="grid2">
-      <div class="card">
-        <h2>Datos del cliente</h2>
-        <div class="grid">
-          <div class="info-group"><span class="k">Tipo:</span> <span class="v">Autónomo</span></div>
-          <div class="info-group"><span class="k">Nombre / Razón social:</span> <span class="v">Prueba</span></div>
-          <div class="info-group"><span class="k">NIF/CIF:</span> <span class="v">12314124</span></div>
-          <div class="info-group"><span class="k">Provincia:</span> <span class="v">Bizkaia</span></div>
-          <div class="info-group"><span class="k">Responsable:</span> <span class="v">asdasda</span></div>
-          <div class="info-group"><span class="k">Email:</span> <span class="v">asdasd</span></div>
-          <div class="info-group full"><span class="k">Actividades:</span> <span class="v">Administraciones Públicas, Servicios Salud Belleza, Patrimonial, Servicios, Sin ánimo de lucro</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Totales Generales</h2>
-        <div class="totals">
-          <div class="big">
-            <div class="label">Total anual</div>
-            <div class="value">17.653,31 €</div>
-          </div>
-          <div class="big">
-            <div class="label">Total mensual</div>
-            <div class="value">1.471,11 €</div>
-          </div>
-        </div>
-        <div class="grid mt">
-          <div class="info-group"><span class="k">Contable (anual):</span> <span class="v">10.872,55 €</span></div>
-          <div class="info-group"><span class="k">Fiscal (anual):</span> <span class="v">4.807,17 €</span></div>
-          <div class="info-group"><span class="k">Laboral (anual):</span> <span class="v">1.973,59 €</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid2">
-      <div class="card">
-        <h2>Servicios seleccionados</h2>
-        <div class="grid">
-          <div class="info-group"><span class="k">Contable:</span> <span class="v">Sí</span></div>
-          <div class="info-group"><span class="k">Fiscal:</span> <span class="v">Sí</span></div>
-          <div class="info-group"><span class="k">Laboral:</span> <span class="v">Sí</span></div>
-          <div class="info-group"><span class="k">IVA periodicidad:</span> <span class="v">Mensualmente</span></div>
-          <div class="info-group"><span class="k">UE habitual:</span> <span class="v">Sí todos los meses</span></div>
-          <div class="info-group"><span class="k">Bienes/Cripto:</span> <span class="v">Sí, ambos</span></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Modelos incluidos</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Modelo</th>
-              <th class="num">Anual</th>
-              <th class="num">Mensual</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Declaración Intrastat</td><td class="num">420,00 €</td><td class="num">35,00 €</td></tr>
-            <tr><td>Modelo 115</td><td class="num">385,00 €</td><td class="num">32,08 €</td></tr>
-            <tr><td>Modelo 123</td><td class="num">385,00 €</td><td class="num">32,08 €</td></tr>
-            <tr><td>Modelo 140</td><td class="num">840,00 €</td><td class="num">70,00 €</td></tr>
-            <tr><td>Modelo 180</td><td class="num">35,00 €</td><td class="num">2,92 €</td></tr>
-            <tr><td>Modelo 193</td><td class="num">53,00 €</td><td class="num">4,42 €</td></tr>
-            <tr><td>Modelo 216</td><td class="num">210,00 €</td><td class="num">17,50 €</td></tr>
-            <tr><td>Modelo 303</td><td class="num">962,50 €</td><td class="num">80,21 €</td></tr>
-            <tr><td>Modelo 345</td><td class="num">180,00 €</td><td class="num">15,00 €</td></tr>
-            <tr><td>Modelo 349</td><td class="num">420,00 €</td><td class="num">35,00 €</td></tr>
-            <tr><td>Modelo 369</td><td class="num">186,67 €</td><td class="num">15,56 €</td></tr>
-            <tr><td>Modelo 390</td><td class="num">140,00 €</td><td class="num">11,67 €</td></tr>
-            <tr><td>Modelo 553</td><td class="num">840,00 €</td><td class="num">70,00 €</td></tr>
-            <tr><td>Modelo 720</td><td class="num">70,00 €</td><td class="num">5,83 €</td></tr>
-            <tr><td>Modelo 721</td><td class="num">70,00 €</td><td class="num">5,83 €</td></tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td><strong>Total modelos</strong></td>
-              <td class="num"><strong>5.197,17 €</strong></td>
-              <td class="num"><strong>433,10 €</strong></td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
+  <div class="grid2">
 
     <div class="card">
-      <h2>Desglose por servicios</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Concepto</th>
-            <th class="num">Anual</th>
-            <th class="num">Mensual</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Asesoría contable (Autónomo/SC)</td>
-            <td class="num">10.872,55 €</td>
-            <td class="num">906,05 €</td>
-          </tr>
-          <tr>
-            <td>Asesoría fiscal (modelos)</td>
-            <td class="num">4.807,17 €</td>
-            <td class="num">400,60 €</td>
-          </tr>
-          <tr>
-            <td>Asesoría laboral (base + extras)</td>
-            <td class="num">1.973,59 €</td>
-            <td class="num">164,47 €</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Totales Generales</h2>
+      <div class="totals">
+        <div class="big">
+          <div class="label">Total anual</div>
+          <div class="value">7.683,31 €</div>
+        </div>
+        <div class="big">
+          <div class="label">Total mensual</div>
+          <div class="value">640,28 €</div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:16px">
+        <div><span class="k">Contable (anual):</span> <span class="v">902,55 €</span></div>
+        <div><span class="k">Fiscal (anual):</span> <span class="v">4.807,17 €</span></div>
+        <div><span class="k">Laboral (anual):</span> <span class="v">1.973,59 €</span></div>
+      </div>
     </div>
 
-    <div class="warn-box">
-      * <strong>Importes orientativos:</strong> El presupuesto final puede variar si se detectan obligaciones fiscales adicionales o cambios en el volumen de datos procesados.
-    </div>
   </div>
-</body>
 
+  <div class="card">
+    <h2>Desglose por servicios</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto</th>
+          <th class="num">Anual</th>
+          <th class="num">Mensual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asesoría contable (Autónomo/SC)</td>
+          <td class="num">902,55 €</td>
+          <td class="num">75,21 €</td>
+        </tr>
+        <tr>
+          <td>Asesoría fiscal (modelos)</td>
+          <td class="num">4.807,17 €</td>
+          <td class="num">400,60 €</td>
+        </tr>
+        <tr>
+          <td>Asesoría laboral (base + extras)</td>
+          <td class="num">1.973,59 €</td>
+          <td class="num">164,47 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn-box">
+    * Importes orientativos. El presupuesto puede variar si cambian los volúmenes de datos o las obligaciones fiscales.
+  </div>
+
+</div>
+</body>
 </html>
